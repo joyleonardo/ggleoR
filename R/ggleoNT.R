@@ -16,7 +16,6 @@
 
 
 ggleoNT=function(f,x,tol,N){
-  library('numDeriv')
   diff<-4
   iter<-0
   while ((diff>tol) && (iter<N)) {
