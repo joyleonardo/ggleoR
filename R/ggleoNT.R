@@ -1,5 +1,6 @@
 #' Title
 #'
+#'
 #' @param f  the function with any variables
 #' @param x  the guessing start point
 #' @param tol Accuracy ex(0.001)
@@ -13,8 +14,9 @@
 #' ggleoNT(f,x,tol,N)
 
 
-ggleoNT=function(f,x,tol,N){
 
+ggleoNT=function(f,x,tol,N){
+  library('numDeriv')
   diff<-4
   iter<-0
   while ((diff>tol) && (iter<N)) {
