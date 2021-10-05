@@ -20,10 +20,10 @@ ggleoNT=function(f,x,tol,N){
   iter<-0
   while ((diff>tol) && (iter<N)) {
     oldx<-x
-    x<-x-solve(hessian(ly, x))%*%grad(ly, x)
+    x<-x-solve(hessian(f, x))%*%grad(f, x)
     diff=sqrt(sum((x-oldx)^2))
     iter<-iter+1
-    cat('this is ',iter,'th iteration,', 'x is ',x,'the value is',ly(x), ',difference norm is',diff,'\n')
+    cat('this is ',iter,'th iteration,', 'x is ',x,'the value is',f(x), ',difference norm is',diff,'\n')
   }
   return(x)
 }
